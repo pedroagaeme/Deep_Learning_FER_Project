@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <title>Classify your Image!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #3c6478;
+        }
+        #maintext {
+            position: absolute;
+            margin: auto;
+            width: 100%;
+            max-width: 700px; /* Adjust max-width to fit your content */
+            height: 300px;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+        }
+        .btn-white {
+            color: #ffffff; /* White text */
+            background-color: #3c6478; /* Matching background color */
+            border-color: #ffffff; /* White border */
+        }
+        .btn-white:hover {
+            color: #000000; /* Black text on hover */
+            background-color: #ffffff; /* White background on hover */
+            border-color: #ffffff; /* White border on hover */
+        }
+        .flash-messages {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 700px;
+            z-index: 1000; /* Ensure flash messages appear above other content */
+        }
+        .flash-messages .alert {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="maintext">
+        <h1 class="text-light mb-2"> Upload an image containing a facial expression to be classified! </h1>
+        <h4 class="text-light mb-5">(Please upload images less than 500kb in size)</h4>
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+            <p class="text-light">
+                <input type="file" name="file" id="file-input">
+                <button type="submit" class="btn btn-white">Upload</button>
+            </p>
+        </form>
+    </div>
+
+    <div class="flash-messages" id="flash-messages">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Hide flash messages when file input changes
+            $('#file-input').on('change', function() {
+                $('#flash-messages').empty(); // Empty flash messages container
+            });
+        });
+    </script>
+</body>
+</html>
