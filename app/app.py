@@ -9,7 +9,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'Deep_Learning_Fer_Project/app/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -36,7 +36,7 @@ class VGG(nn.Module):
         return self.vgg(x)
 
 vgg_model = VGG(NUM_CLASSES)
-vgg_checkpoint = torch.load('models/VGG19_best_model.pth', map_location=torch.device('cpu'))
+vgg_checkpoint = torch.load('Deep_Learning_Fer_Project/app/models/VGG19_best_model.pth', map_location=torch.device('cpu'))
 vgg_model.load_state_dict(vgg_checkpoint)
 vgg_model.eval()
 
@@ -50,7 +50,7 @@ class ResNet18(nn.Module):
         return self.resnet(x)
 
 resNet_model = ResNet18(NUM_CLASSES)
-resnet_checkpoint = torch.load('models/ResNet18_best_model.pth', map_location=torch.device('cpu'))
+resnet_checkpoint = torch.load('Deep_Learning_Fer_Project/app/models/ResNet18_best_model.pth', map_location=torch.device('cpu'))
 resNet_model.load_state_dict(resnet_checkpoint)
 resNet_model.eval()
 
@@ -63,7 +63,7 @@ class EfficientNetB0(nn.Module):
         return self.efficientNet(x)
 
 efficientNet_model = EfficientNetB0(NUM_CLASSES)
-efficientNet_checkpoint = torch.load('models/EfficientNet_B0_best_model.pth', map_location=torch.device('cpu'))
+efficientNet_checkpoint = torch.load('Deep_Learning_Fer_Project/app/models/EfficientNet_B0_best_model.pth', map_location=torch.device('cpu'))
 efficientNet_model.load_state_dict(efficientNet_checkpoint)
 efficientNet_model.eval()
 
@@ -77,7 +77,7 @@ class ViT(nn.Module):
     return self.vit(x)
 
 vit_model = ViT(NUM_CLASSES)
-viT_checkpoint = torch.load('models/ViT_best_model.pth', map_location=torch.device('cpu'))
+viT_checkpoint = torch.load('Deep_Learning_Fer_Project/app/models/ViT_best_model.pth', map_location=torch.device('cpu'))
 vit_model.load_state_dict(viT_checkpoint)
 vit_model.eval()
 
