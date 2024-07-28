@@ -17,7 +17,7 @@ app.secret_key = 'dj30mdsmdxda'
 NUM_CLASSES = 7
 IMAGE_SIZE = 224
 
-number_to_class = ['surprise', 'fear', 'disgust', 'happiness', 'sadness', 'anger', 'neutral']
+number_to_class = ['surpresa', 'medo', 'nojo', 'alegria', 'tristeza', 'raiva', 'neutro']
 mean, std = [0.485, 0.456, 0.406], [0.229, 0.224, 0.225]
 
 preprocess = v2.Compose([

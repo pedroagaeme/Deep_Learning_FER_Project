@@ -11,7 +11,7 @@
             position: absolute;
             margin: auto;
             width: 100%;
-            max-width: 1000px; /* Adjust max-width to fit your content */
+            max-width: 1000px; 
             height: auto;
             text-align: center;
             top: 50%;
@@ -20,50 +20,49 @@
         }
         .table-bordered {
             width: 100%;
-            margin-bottom: 30px; /* Adjust the spacing between tables */
+            margin-bottom: 30px; 
         }
         .button-container {
             text-align: center;
-            margin-top: 20px; /* Adjust the spacing between tables and button */
+            margin-top: 20px; 
         }
         .btn-white {
-            color: #ffffff; /* Black text */
-            background-color: #3c6478; /* White background */
-            border-color: #ffffff; /* White border */
+            color: #ffffff;
+            background-color: #3c6478; 
+            border-color: #ffffff;
         }
         .btn-white:hover {
-            color: #000000; /* White text on hover */
-            background-color: #ffffff; /* Black background on hover */
-            border-color: #ffffff; /* Black border on hover */
+            color: #000000;
+            background-color: #ffffff; 
+            border-color: #ffffff; 
         }
     </style>
 </head>
 <body>
 <div id="maintext">
-  <h1 class="text-light mb-5"> Your Predictions </h1>
+  <h1 class="text-light mb-5"> Previsões </h1>
   
   <div class="row">
-    <!-- First Pair of Tables -->
     <div class="col-md-6">
-      <h3 class="text-light mb-3">VGG19 Predictions</h3>
+      <h3 class="text-light mb-3">VGG19</h3>
       <table class="table-bordered text-light">
           <tr>
-            <th>Rank</th>
-            <th>Class</th>
-            <th>Probability</th>
+            <th>Posição</th>
+            <th>Classe</th>
+            <th>Probabilidade</th>
           </tr>
           <tr>
-            <td>Most Likely:</td>
+            <td>Mais Provável:</td>
             <td>{{ predictions.vgg_class1 }}</td>
             <td>{{ predictions.vgg_prob1 }}</td>
           </tr>
           <tr>
-            <td>2nd Most Likely:</td>
+            <td>2º Mais Provável:</td>
             <td>{{ predictions.vgg_class2 }}</td>
             <td>{{ predictions.vgg_prob2 }}</td>
           </tr>
           <tr>
-            <td>3rd Most Likely:</td>
+            <td>3º Mais Provável:</td>
             <td>{{ predictions.vgg_class3 }}</td>
             <td>{{ predictions.vgg_prob3 }}</td>
           </tr>
@@ -71,53 +70,51 @@
     </div>
 
     <div class="col-md-6">
-      <h3 class="text-light mb-3">ResNet18 Predictions</h3>
+      <h3 class="text-light mb-3">ResNet18</h3>
       <table class="table-bordered text-light">
           <tr>
-            <th>Rank</th>
-            <th>Class</th>
-            <th>Probability</th>
+            <th>Posição</th>
+            <th>Classe</th>
+            <th>Probabilidade</th>
           </tr>
           <tr>
-            <td>Most Likely:</td>
+            <td>Mais Provável:</td>
             <td>{{ predictions.resNet_class1 }}</td>
             <td>{{ predictions.resNet_prob1 }}</td>
           </tr>
           <tr>
-            <td>2nd Most Likely:</td>
+            <td>2º Mais Provável:</td>
             <td>{{ predictions.resNet_class2 }}</td>
             <td>{{ predictions.resNet_prob2 }}</td>
           </tr>
           <tr>
-            <td>3rd Most Likely:</td>
+            <td>3º Mais Provável:</td>
             <td>{{ predictions.resNet_class3 }}</td>
             <td>{{ predictions.resNet_prob3 }}</td>
           </tr>
       </table>
     </div>
-    <!-- End First Pair -->
 
-    <!-- Second Pair of Tables -->
     <div class="col-md-6">
-      <h3 class="text-light mb-3">EfficientNet B0 Predictions</h3>
+      <h3 class="text-light mb-3">EfficientNet B0</h3>
       <table class="table-bordered text-light">
           <tr>
-            <th>Rank</th>
-            <th>Class</th>
-            <th>Probability</th>
+            <th>Posição</th>
+            <th>Classe</th>
+            <th>Probabilidade</th>
           </tr>
           <tr>
-            <td>Most Likely:</td>
+            <td>Mais Provável:</td>
             <td>{{ predictions.efficientNet_class1 }}</td>
             <td>{{ predictions.efficientNet_prob1 }}</td>
           </tr>
           <tr>
-            <td>2nd Most Likely:</td>
+            <td>2nd Mais Provável:</td>
             <td>{{ predictions.efficientNet_class2 }}</td>
             <td>{{ predictions.efficientNet_prob2 }}</td>
           </tr>
           <tr>
-            <td>3rd Most Likely:</td>
+            <td>3º Mais Provável:</td>
             <td>{{ predictions.efficientNet_class3 }}</td>
             <td>{{ predictions.efficientNet_prob3 }}</td>
           </tr>
@@ -125,34 +122,32 @@
     </div>
 
     <div class="col-md-6">
-      <h3 class="text-light mb-3">ViT Predictions</h3>
+      <h3 class="text-light mb-3">ViT</h3>
       <table class="table-bordered text-light">
           <tr>
-            <th>Rank</th>
-            <th>Class</th>
-            <th>Probability</th>
+            <th>Posição</th>
+            <th>Classe</th>
+            <th>Probabilidade</th>
           </tr>
           <tr>
-            <td>Most Likely:</td>
+            <td>Mais Provável:</td>
             <td>{{ predictions.vit_class1 }}</td>
             <td>{{ predictions.vit_prob1 }}</td>
           </tr>
           <tr>
-            <td>2nd Most Likely:</td>
+            <td>2º Mais Provável:</td>
             <td>{{ predictions.vit_class2 }}</td>
             <td>{{ predictions.efficientNet_prob2 }}</td>
           </tr>
           <tr>
-            <td>3rd Most Likely:</td>
+            <td>3º Mais Provável::</td>
             <td>{{ predictions.vit_class3 }}</td>
             <td>{{ predictions.vit_prob3 }}</td>
           </tr>
       </table>
     </div>
-    <!-- End Second Pair -->
   </div>
 
-  <!-- Navigation Button -->
   <div class="button-container">
     <a href="{{ url_for('main_page') }}" class="btn btn-white mt-3">Try again?</a>
   </div>
